@@ -26,12 +26,11 @@ func IsGivenValueWithInTheRange(val interface{}) error {
 			return fmt.Errorf("given value is out of range")
 		}
 	case int:
-		// Correctly handle 32-bit vs 64-bit int
-		if ^uint(0) == (1<<32 - 1) { // 32-bit system
+		if ^uint(0) == (1<<32 - 1) {
 			if v < -1<<31 || v > (1<<31)-1 {
 				return fmt.Errorf("given value is out of range")
 			}
-		} else { // 64-bit system
+		} else {
 			if v < -1<<63 || v > (1<<63)-1 {
 				return fmt.Errorf("given value is out of range")
 			}
@@ -57,7 +56,7 @@ func IsGivenValueWithInTheRange(val interface{}) error {
 			if v > (1<<32)-1 {
 				return fmt.Errorf("given value is out of range")
 			}
-		} else { // 64-bit system
+		} else {
 			if v > (1<<64)-1 {
 				return fmt.Errorf("given value is out of range")
 			}
