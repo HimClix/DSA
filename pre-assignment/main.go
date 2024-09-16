@@ -7,12 +7,33 @@ import (
 
 func main() {
 	//(1a)area of circle
-	radius := 3.144876543456
-	area, err := basics.GetAreaOfCircle(radius)
+	// radius := 3.144876543456
+	// area, err := basics.GetAreaOfCircle(radius)
+	// if err != nil {
+	// 	fmt.Println("err", err)
+	// }
+	// fmt.Printf("%v", area)
+
+	//(1b) swapping of two numbers
+
+	// a := 1
+	// b := 2
+
+	// a, b = basics.SwapTwoNumbers(a, b)
+	// fmt.Printf("a's value is %d and b's value is %d", a, b)
+
+	//(1c) reverse the given number
+
+	value := interface{}(
+		-4294967295890754750,
+	)
+
+	val, err := basics.ReverseTheNumber(value)
 	if err != nil {
-		fmt.Println("err", err)
+		fmt.Errorf("err %v", err)
 	}
-	fmt.Printf("%v", area)
+
+	fmt.Printf("reversed number is %v", val)
 
 	//(2b)biggest of two numbers
 

@@ -10,56 +10,60 @@ import (
 func IsGivenValueWithInTheRange(val interface{}) error {
 	switch v := val.(type) {
 	case int8:
-		if v < int8(-1<<7) || v > int8((1<<7)-1) {
+		if v < -1<<7 || v > (1<<7)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case int16:
-		if v < int16(-1<<15) || v > int16((1<<15)-1) {
+		if v < -1<<15 || v > (1<<15)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case int32:
-		if v < int32(-1<<31) || v > int32((1<<31)-1) {
+		if v < -1<<31 || v > (1<<31)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case int64:
-		if v < int64(-1<<63) || v > int64((1<<63)-1) {
+		if v < -1<<63 || v > (1<<63)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case int:
-		if (v < int(-1<<31) || v > int((1<<31)-1)) || (v < int(-1<<63) || v > int((1<<63)-1)) {
-			return fmt.Errorf("given value is out of range")
+		// Correctly handle 32-bit vs 64-bit int
+		if ^uint(0) == (1<<32 - 1) { // 32-bit system
+			if v < -1<<31 || v > (1<<31)-1 {
+				return fmt.Errorf("given value is out of range")
+			}
+		} else { // 64-bit system
+			if v < -1<<63 || v > (1<<63)-1 {
+				return fmt.Errorf("given value is out of range")
+			}
 		}
-
 	case uint8:
-		if v > uint8((1<<8)-1) {
+		if v > (1<<8)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case uint16:
-		if v > uint16((1<<16)-1) {
+		if v > (1<<16)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case uint32:
-		if v > uint32((1<<32)-1) {
+		if v > (1<<32)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case uint64:
-		if v > uint64((1<<64)-1) {
+		if v > (1<<64)-1 {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	case uint:
-		if (v > uint((1<<32)-1)) || (v > uint((1<<64)-1)) {
-			return fmt.Errorf("given value is out of range")
+		if ^uint(0) == (1<<32 - 1) {
+			if v > (1<<32)-1 {
+				return fmt.Errorf("given value is out of range")
+			}
+		} else { // 64-bit system
+			if v > (1<<64)-1 {
+				return fmt.Errorf("given value is out of range")
+			}
 		}
 	case float32:
-		if v < float32(1.0/(1<<149)) || v > float32((2-2.0/(1<<23))*(1<<127)) {
+		if v < 1.0/(1<<149) || v > (2-2.0/(1<<23))*(1<<127) {
 			return fmt.Errorf("given value is out of range")
 		}
 	case float64:
@@ -72,7 +76,6 @@ func IsGivenValueWithInTheRange(val interface{}) error {
 		if v < float64(minFloat64) || v > float64(maxFloat64) {
 			return fmt.Errorf("given value is out of range")
 		}
-
 	default:
 		return fmt.Errorf("invalid data type")
 	}
