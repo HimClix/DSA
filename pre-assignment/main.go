@@ -1,10 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"preassignment/basics"
-)
-
 func main() {
 	//(1a)area of circle
 	// radius := 3.144876543456
@@ -24,27 +19,80 @@ func main() {
 
 	//(1c) reverse the given number
 
-	value := interface{}(
-		-4294967295890754750,
-	)
+	// value := interface{}(
+	// 	-4294967295890754750,
+	// )
 
-	val, err := basics.ReverseTheNumber(value)
-	if err != nil {
-		fmt.Errorf("err %v", err)
-	}
+	// val, err := basics.ReverseTheNumber(value)
+	// if err != nil {
+	// 	fmt.Errorf("err %v", err)
+	// }
 
-	fmt.Printf("reversed number is %v", val)
+	// fmt.Printf("reversed number is %v", val)
 
 	//(2b)biggest of two numbers
 
 	// a := int64(777777777777)
 	// b := int32(7654567)
 
-	// result, err := controlstructures.FindGreaterNumber(a, b)
+	// result, err := ifelse.FindGreaterNumber(a, b)
 	// if err != nil {
 	// 	fmt.Println("error:", err)
 	// }
 
 	// fmt.Printf("the greater number is %v", result)
+
+	// (2b) Even or odd numbers
+
+	//a := -9
+
+	// value := ifelse.FindEvenOrOdd(a)
+	// fmt.Printf("value is %v", value)
+
+	// (2c) Absolute value of a number
+	// value := ifelse.AbsoluteValueOfTheNumber(a)
+	// fmt.Printf("absolute value is %v", value)
+
+	//(2d) Given character is vowel or not
+	// tempval := "a"
+
+	// val := ifelse.VowelIdentifier(tempval)
+	// fmt.Printf("%v", val)
+
+	//(2e) Given year is leap or not
+
+	//a := 2018
+
+	// val := ifelse.LeapYearIdentifier(a)
+	// fmt.Printf("%v", val)
+
+	// (3a) Biggest of 3,4 numbers
+	// a, b, c, d := 22, 33, 44, 55
+	// val := controlstructures.BiggestOfFourNumbers(a, b, c, d)
+	// fmt.Printf("%v", val)
+
+	// (3b) Quadrant of a point (Q1,Q2,Q3,Q4 etc)
+	// a, b := -5, 5
+	// val := controlstructures.QuadrantPointIdentifier(a, b)
+	// fmt.Printf("%v", val)
+
+	// (3c) Leap year or not
+	// val := controlstructures.LeapYearIdentifierV2(a)
+	// fmt.Printf("%v", val)
+
+	// (4a) Biggest of 3,4 numbers
+	// a, b, c, d := 22, 33, 44, 55
+	// val := nestedifelses.BiggestOfFourNumbers(a, b, c, d)
+	// fmt.Printf("%v", val)
+
+	// (4b) Quadrant of a point (Q1,Q2,Q3,Q4,on axis, origin etc)
+	// a, b := -5, 5
+	// val := nestedifelses.QuadrantPointIdentifierV2(a, b)
+	// fmt.Printf("%v", val)
+
+	//(4c) Leap year or not
+	// a := 2019
+	// val := nestedifelses.LeapYearIdentifierV3(a)
+	// fmt.Printf("%v", val)
 
 }

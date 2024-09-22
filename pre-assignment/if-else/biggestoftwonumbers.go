@@ -1,4 +1,4 @@
-package controlstructures
+package ifelse
 
 import (
 	"fmt"
