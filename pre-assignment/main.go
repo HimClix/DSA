@@ -112,4 +112,9 @@ func main() {
 	// val := controlstructures.ActionBasedOperations(a, b, "add")
 	// fmt.Printf("%v", val)
 
+	// (4g) Electricity bill or Income tax problem
+	// totalCtc := 5000000
+	// val := controlstructures.TaxCalculator(totalCtc)
+	// fmt.Printf("%v", val)
+
 }
