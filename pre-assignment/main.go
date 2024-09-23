@@ -106,4 +106,10 @@ func main() {
 	// totalmarks, totalsubjects := 600, 6
 	// val := controlstructures.GradeBasedOnAverageMarks(totalsubjects, totalmarks)
 	// fmt.Printf("%v", val)
+
+	//(4f) Choice based arithmetic (1-add,2-sub,3-mul,4-div etc)
+	// a, b := 23434, 2376789
+	// val := controlstructures.ActionBasedOperations(a, b, "add")
+	// fmt.Printf("%v", val)
+
 }
