@@ -102,4 +102,8 @@ func main() {
 	// val := controlstructures.IdentifyDayOfTheWeek(day, month, year)
 	// fmt.Printf("%v", val)
 
+	//(4e) Grade of the student based on marks in n subjects
+	// totalmarks, totalsubjects := 600, 6
+	// val := controlstructures.GradeBasedOnAverageMarks(totalsubjects, totalmarks)
+	// fmt.Printf("%v", val)
 }
