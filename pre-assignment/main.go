@@ -95,4 +95,11 @@ func main() {
 	// val := nestedifelses.LeapYearIdentifierV3(a)
 	// fmt.Printf("%v", val)
 
+	//(4d) Day of the week
+
+	// day, month, year := 15, 9, 2024
+
+	// val := controlstructures.IdentifyDayOfTheWeek(day, month, year)
+	// fmt.Printf("%v", val)
+
 }
